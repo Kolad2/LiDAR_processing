@@ -1,6 +1,10 @@
 readme file
 
 ```
+sudo apt install ffmpeg
+```
+
+```
 conda create --name nerfstudio -y python=3.8
 conda activate nerfstudio
 pip install --upgrade pip
@@ -30,6 +34,7 @@ pip install -e .
 
 git submodule update --init --recursive
 
+# Test Data
 Download Data
 ns-download-data nerfstudio --capture-name=poster
 
