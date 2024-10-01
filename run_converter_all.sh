@@ -1,12 +1,12 @@
 #!/bin/bash
 
 
+DATA_NAME="Horga5"
 
-
-for i in {3..20}
+for i in {0..20}
 do
-  OUTPUT_PATH="/home/ubuntu/Projects/LiDAR_processing/data/nerfstudio/Horga4_"$i
-  POLYCAM_ZIP="/home/ubuntu/Projects/LiDAR_processing/data/polycam/Horga4/Horga4_"$i".zip"
+  POLYCAM_ZIP="./data/polycam/"$DATA_NAME"/"$DATA_NAME"_"$i".zip"
+  OUTPUT_PATH="./data/nerfstudio/"$DATA_NAME"/"$DATA_NAME"_"$i
   ns-process-data polycam --data $POLYCAM_ZIP --output-dir $OUTPUT_PATH
 done
 

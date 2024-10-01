@@ -1,12 +1,12 @@
 #!/bin/bash
 
+DATA_NAME="Horga5"
 
-for i in {17..20}
+for i in {0..20}
 do
-  DATA_PATH="/home/ubuntu/Projects/LiDAR_processing/data/nerfstudio/Horga4_"$i
-  OPTIONS="--viewer.quit-on-train-completion True"
+  DATA_PATH="./data/nerfstudio/"$DATA_NAME"/"$DATA_NAME"_"$i
+  OUTPUT_DIR="outputs/"$DATA_NAME
+  OPTIONS="--viewer.quit-on-train-completion True --output-dir "$OUTPUT_DIR
   ns-train nerfacto --data $DATA_PATH $OPTIONS
 done
 
-#
-# ns-train nerfacto --data $DATA_PATH --load-dir $CHECKPOINT_PATH $OPTIONS
