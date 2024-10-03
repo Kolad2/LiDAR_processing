@@ -24,7 +24,7 @@ The most hard to execute.
 ```
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 ```
-tiny-cuda-nn supports only 11 compiler use if you cant install
+tiny-cuda-nn supports only gcc-11 compiler use if you cant install
 ```
 sudo apt install gcc-11 g++-11
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60
@@ -33,6 +33,7 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 60
 
 ```
 pip install --upgrade pip setuptools
+cd nerfstudio
 pip install -e .
 ```
 
@@ -41,8 +42,11 @@ git submodule update --init --recursive
 
 # Test Data
 Download Data
+```
 ns-download-data nerfstudio --capture-name=poster
+```
 
+# cli
 Train model
 ns-train nerfacto --data data/nerfstudio/poster
 
