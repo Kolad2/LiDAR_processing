@@ -1,5 +1,10 @@
 readme file
 
+Обновление модулей впервые
+```
+git submodule update --init --recursive
+```
+
 ```
 sudo apt install ffmpeg
 ```
@@ -19,7 +24,7 @@ The most hard to execute.
 ```
 pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 ```
-tiny-cuda-nn supports only 11 compiler use if uoy cant install
+tiny-cuda-nn supports only 11 compiler use if you cant install
 ```
 sudo apt install gcc-11 g++-11
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60
