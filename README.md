@@ -34,21 +34,25 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 60
 ```
 pip install --upgrade pip setuptools
 cd nerfstudio
-pip install -e .
+pip install -e . #устанавливает пакет в ваше текущее окружение в режиме разработки.
 ```
 
 
 git submodule update --init --recursive
 
-# Test Data
+
+# cli
+## Test Data
 Download Data
 ```
 ns-download-data nerfstudio --capture-name=poster
 ```
 
-# cli
 Train model
+```
 ns-train nerfacto --data data/nerfstudio/poster
+```
+
 
 
 
