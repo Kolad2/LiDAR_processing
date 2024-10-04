@@ -1,7 +1,7 @@
 """
 Test the camera classes.
 """
-
+import os
 import dataclasses
 from itertools import product
 
@@ -41,6 +41,3 @@ def test_orthophoto_camera():
     # `ortho_rays.origins` should be grid points with a mean value of `pinhole_rays.origins`.
     assert torch.allclose(ortho_rays.origins.mean(dim=(0, 1)), pinhole_rays.origins[1, 1])
 
-
-
-test_orthophoto_camera()
