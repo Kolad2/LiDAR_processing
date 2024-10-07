@@ -63,6 +63,6 @@ Train model
 ns-train nerfacto --data data/nerfstudio/poster
 ```
 
-
-
+for win local viewer
+http://localhost:7007/
 

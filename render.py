@@ -8,7 +8,7 @@ camera_path_filename = Path("data/nerfstudio/poster/camera_paths/cut_1.json")
 ren = RenderOrthoCameraPath(
 	load_config=config_path,
 	camera_path_filename=camera_path_filename,
-	output_format="images"
+	output_format="video"
 )
 
 ren.main()
