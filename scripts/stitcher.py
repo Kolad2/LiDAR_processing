@@ -9,5 +9,3 @@ frame = stitcher.stitch()
 
 cv2.imwrite("image.png", frame)
 
-
-
