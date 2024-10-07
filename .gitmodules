@@ -4,3 +4,6 @@
 [submodule "src/rockedgesdetectors"]
 	path = src/rockedgesdetectors
 	url = https://github.com/Kolad2/rockedgesdetectors.git
+[submodule "src/polycamsplittig"]
+	path = src/polycamsplittig
+	url = https://github.com/Kolad2/PolycamSplitting.git
