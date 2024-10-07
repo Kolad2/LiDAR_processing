@@ -1,4 +1,3 @@
-import numpy as np
 from polycamsplitting import recompile
 
 zip_file_path = "data/polycam/Horga5.zip"
