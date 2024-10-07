@@ -10,3 +10,6 @@
 [submodule "src/orthostitcher"]
 	path = src/orthostitcher
 	url = https://github.com/Kolad2/orthostitcher
+[submodule "src/pyrocksegmentation"]
+	path = src/pyrocksegmentation
+	url = https://github.com/IDGRockFragmentationAnaliz/pyrocksegmentation.git
