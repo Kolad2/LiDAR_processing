@@ -7,3 +7,6 @@
 [submodule "src/polycamsplittig"]
 	path = src/polycamsplittig
 	url = https://github.com/Kolad2/PolycamSplitting.git
+[submodule "src/orthostitcher"]
+	path = src/orthostitcher
+	url = https://github.com/Kolad2/orthostitcher
