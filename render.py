@@ -1,8 +1,8 @@
 from pathlib import Path
 from render_ortho_camera_path import RenderOrthoCameraPath
 
-config_path = Path("outputs/poster/nerfacto/2024-10-03_195556/config.yml")
-camera_path_filename = Path("data/nerfstudio/poster/camera_paths/cut_poster.json")
+config_path = Path("outputs/poster/nerfacto/2024-10-07_162639/config.yml")
+camera_path_filename = Path("data/nerfstudio/poster/camera_paths/cut_1.json")
 
 
 ren = RenderOrthoCameraPath(
