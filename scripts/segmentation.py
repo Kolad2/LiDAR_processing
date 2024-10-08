@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from pyrocksegmentation import RockImageSegmentator
+from pyrocksegmentation import Segmentator
 from rockedgesdetectors import ModelGPU
 
 image = cv2.imread("image.png")
@@ -11,5 +11,7 @@ image = cv2.imread("image.png")
 
 edges_weighted = np.load('edges_weighted.npy')
 
-segmentator = RockImageSegmentator(image=image, edges_weighted=edges_weighted)
+segmentator = Segmentator(image=image, edges_weighted=edges_weighted)
 segmentator.run()
+
+
