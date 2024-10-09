@@ -13,3 +13,6 @@
 [submodule "src/pyrocksegmentation"]
 	path = src/pyrocksegmentation
 	url = https://github.com/IDGRockFragmentationAnaliz/pyrocksegmentation.git
+[submodule "src/pyrockstats"]
+	path = src/pyrockstats
+	url = https://github.com/IDGRockFragmentationAnaliz/pyrockstats.git
