@@ -9,6 +9,7 @@ model = ModelGPU("../models/RCFcheckpoint_epoch12.pth")
 #edges = model.get_model_edges(big_frame)
 edges = Cropper(model, big_frame).get_cropped_edges(512, 512, 64, 64)
 
+
 fig = plt.figure(figsize=(14, 9))
 axs = [fig.add_subplot(1, 1, 1)]
 axs[0].imshow(edges)
