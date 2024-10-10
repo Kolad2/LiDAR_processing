@@ -17,6 +17,9 @@ segments = segmentator.run()
 extractor = Extractor(segments)
 S = extractor.extruct()
 
+sampling = np.array(S)
+
+np.save('sampling.npy', sampling)
 
 print(S)
 
