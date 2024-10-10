@@ -16,3 +16,9 @@
 [submodule "src/pyrockstats"]
 	path = src/pyrockstats
 	url = https://github.com/IDGRockFragmentationAnaliz/pyrockstats.git
+[submodule "src/pyrockpolycamtools"]
+	path = src/pyrockpolycamtools
+	url = https://github.com/IDGRockFragmentationAnaliz/pyrockpolycamtools.git
+[submodule "src/pyrockupscale"]
+	path = src/pyrockupscale
+	url = https://github.com/IDGRockFragmentationAnaliz/pyrockupscale.git
