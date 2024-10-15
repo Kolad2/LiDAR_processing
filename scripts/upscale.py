@@ -10,7 +10,7 @@ device = torch.device('cpu')
 model = RealESRGAN(device, scale=scale)
 model.load_weights(f"../models/RealESRGAN_x{scale}.pth", download=False)
 
-file_name = "image.png"
+file_name = "../images/image.png"
 
 image = Image.open(file_name).convert('RGB')
 
