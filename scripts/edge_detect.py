@@ -1,11 +1,11 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from rockedgesdetectors import ModelGPU, Cropper
+from rockedgesdetectors import ModelRCF, Cropper
 
 
-big_frame = cv2.imread("image_up8.tiff")
-model = ModelGPU("../models/RCFcheckpoint_epoch12.pth")
+big_frame = cv2.imread("../images/image_up8.tiff")
+model = ModelRCF("../models/RCFcheckpoint_epoch12.pth")
 #edges = model.get_model_edges(big_frame)
 edges = Cropper(model, big_frame).get_cropped_edges(512, 512, 64, 64)
 

@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 from pyrocksegmentation import Segmentator, Extractor
-from rockedgesdetectors import ModelGPU, Cropper
+from rockedgesdetectors import ModelRCF, Cropper
 
 
 def get_image_path(image_folder, image_name):
@@ -28,7 +28,7 @@ def get_edges_weighted(scale=1, image_folder=Path("."), edges_folder=Path("."), 
 		return edges_weighted
 	except:
 		print("Не найденны веса, попытка генерации")
-		model = ModelGPU("../models/RCFcheckpoint_epoch12.pth")
+		model = ModelRCF("../models/RCFcheckpoint_epoch12.pth")
 		try:
 			image_path = get_image_path(image_folder=image_folder, image_name=image_name)
 			image = cv2.imread(str(image_path))

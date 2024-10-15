@@ -1,60 +1,26 @@
-import os
-import argparse
-import time
 import cv2
-
-import torch
-import torchvision
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.backends.cudnn as cudnn
-import torchvision.transforms as transforms
-
 import matplotlib.pyplot as plt
+from rockedgesdetectors import ModelPiDiNet
 
-from rockedgesdetectors import pidinet
-from rockedgesdetectors.pidinet.pidinet import PiDiNet
-from rockedgesdetectors.pidinet.utils import load_checkpoint
-from rockedgesdetectors.pidinet.config import config_model
-from rockedgesdetectors.pidinet.convert_pidinet import convert_pidinet
+checkpoint_path_7 = "../models/pidinetmodels/table7_pidinet.pth"
+checkpoint_path_5 = "../models/pidinetmodels/table5_pidinet.pth"
 
 
-pdcs = config_model('carv4')
-model = PiDiNet(60, pdcs, dil=24, sa=True)
-model = torch.nn.DataParallel(model).cuda()
-
-checkpoint_path = "../models/pidinetmodels/table7_pidinet.pth"
-#checkpoint_path = "../models/pidinetmodels/table5_pidinet.pth"
-#checkpoint_path = "../models/pidinetmodels/table5_baseline.pth"
-checkpoint = torch.load(checkpoint_path, map_location='cpu')
-
-#pidinet_state_dict = convert_pidinet(checkpoint['state_dict'], 'carv4')
-#model.load_state_dict(pidinet_state_dict, strict=False)
-
-model.load_state_dict(checkpoint['state_dict'])
-
-normalize = transforms.Normalize(
-    mean=[0.485, 0.456, 0.406],
-    std=[0.229, 0.224, 0.225]
-)
-
-transform = transforms.Compose(
-    [transforms.ToTensor(), normalize]
-)
-
+model = ModelPiDiNet(checkpoint_path_7)
 image = cv2.imread(f"..//images//test.png")
+result_1 = model(image)
 
-
-image = transform(image).unsqueeze(0).cuda()
-
-#model.eval()
-results = model(image)
-result = torch.squeeze(results[-1]).detach().cpu().numpy()
-
+model = ModelPiDiNet(checkpoint_path_5)
+image = cv2.imread(f"..//images//test.png")
+result_2 = model(image)
 
 fig = plt.figure(figsize=(7, 9))
-axs = [fig.add_subplot(1, 1, 1)]
-axs[0].imshow(result)
+axs = [fig.add_subplot(2, 2, 1),
+       fig.add_subplot(2, 2, 3),
+       fig.add_subplot(2, 2, 4)]
+axs[0].imshow(image)
+axs[1].imshow(result_1)
+axs[2].imshow(result_2)
 plt.show()
 
 
