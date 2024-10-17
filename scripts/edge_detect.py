@@ -28,8 +28,8 @@ def get_model(name):
 
 
 model_name = "pidinet_7"
-image_load_path = f"..//images_test//IMGP3859_cut.png"
-image_save_path = f"..//images_test//IMGP3859_cut_edges.png"
+image_load_path = f"../images_test/IMGP3859_cut.png"
+image_save_path = f"../images_test/IMGP3859_cut_edges.png"
 
 # get edges from model
 model = Cropper(get_model(model_name))
