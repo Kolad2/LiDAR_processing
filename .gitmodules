@@ -22,3 +22,6 @@
 [submodule "src/pyrockupscale"]
 	path = src/pyrockupscale
 	url = https://github.com/IDGRockFragmentationAnaliz/pyrockupscale.git
+[submodule "src/pygradskeleton"]
+	path = src/pygradskeleton
+	url = https://github.com/IDGRockFragmentationAnaliz/pygradskeleton.git

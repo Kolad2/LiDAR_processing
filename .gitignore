@@ -6,3 +6,4 @@ models/*.pth
 scripts/*.png
 .idea
 images
+temp/*.npy
