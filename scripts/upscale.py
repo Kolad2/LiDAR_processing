@@ -1,18 +1,17 @@
 import torch
-from PIL import Image
+import cv2
 from pyrockupscale import RealESRGAN
 
 scale = 4
 
 # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = torch.device('cpu')
-#device = torch.device('cuda')
-model = RealESRGAN(device, scale=scale)
-model.load_weights(f"../models/RealESRGAN_x{scale}.pth", download=False)
 
-file_name = "../images/image.png"
+model_path = f"../models/RealESRGAN_x{scale}.pth"
+model = RealESRGAN(scale=scale, model_path=model_path, device=torch.device('cpu'))
 
-image = Image.open(file_name).convert('RGB')
+#file_name = "../images/image.png"
+file_name = "../images_test/IMGP3874_cut.png"
+image = cv2.cvtColor(cv2.imread(file_name), cv2.COLOR_BGR2RGB)
 
 print("predict start")
 sr_image = model.predict(
