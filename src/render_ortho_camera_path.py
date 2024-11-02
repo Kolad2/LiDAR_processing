@@ -10,6 +10,9 @@ from utils import get_path_from_json
 
 
 class RenderOrthoCameraPath(render.RenderCameraPath):
+	render_height = None
+	render_width = None
+
 	def main(self):
 		_, pipeline, _, _ = eval_setup(
 			self.load_config,
@@ -22,6 +25,12 @@ class RenderOrthoCameraPath(render.RenderCameraPath):
 
 		seconds = camera_path["seconds"]
 		crop_data = render.get_crop_from_json(camera_path)
+
+		if self.render_height is not None:
+			camera_path["render_height"] = self.render_height
+		if self.render_width is not None:
+			camera_path["render_width"] = self.render_width
+
 		camera_path = get_path_from_json(camera_path)
 
 		if self.output_format == "video" and str(self.output_path.suffix) == "":

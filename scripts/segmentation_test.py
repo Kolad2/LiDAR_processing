@@ -5,13 +5,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pyrocksegmentation import Segmentator, Extractor
 
-image_path = Path(f"../images_test/IMGP3874_cut.png")
-edges_weighted_path = Path(f"../images_test/IMGP3874_cut_edges.png")
+image_path = Path(f"D:/1.ToSaver/profileimages/1/image.png")
+edges_weighted_path = Path(f"D:/1.ToSaver/profileimages/1/image_edges.png")
 thin_edges_path = Path(f'../images_test/IMGP3874_cut_thinedges.png')
 
 
 image_0 = cv2.imread(str(image_path))
-thin_edges = cv2.imread(str(thin_edges_path), 0)
+#thin_edges = cv2.imread(str(thin_edges_path), 0)
 edges_weighted = cv2.imread(str(edges_weighted_path), 0)
 
 segmetator = Segmentator(image_0, edges_weighted=edges_weighted)
@@ -23,7 +23,7 @@ image = segmetator.get_segment_image()
 
 s = Extractor(area_marks).extruct()
 np.save('sampling.npy', s)
-exit()
+
 
 fig = plt.figure(figsize=(6, 6))
 axs = [fig.add_subplot(1, 1, 1)]
