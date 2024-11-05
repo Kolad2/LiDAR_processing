@@ -25,3 +25,6 @@
 [submodule "src/pygradskeleton"]
 	path = src/pygradskeleton
 	url = https://github.com/IDGRockFragmentationAnaliz/pygradskeleton.git
+[submodule "src/rocknetmanager"]
+	path = src/rocknetmanager
+	url = https://github.com/IDGRockFragmentationAnaliz/rocknetmanager.git
