@@ -10,7 +10,7 @@ model_path = f"../models/RealESRGAN_x{scale}.pth"
 model = RealESRGAN(scale=scale, model_path=model_path, device=torch.device('cpu'))
 
 #file_name = "../images/image.png"
-file_name = "../images_test/IMGP3874_cut.png"
+file_name = "../images/cut_3_2.png"
 image = cv2.cvtColor(cv2.imread(file_name), cv2.COLOR_BGR2RGB)
 
 print("predict start")
@@ -22,6 +22,6 @@ sr_image = model.predict(
     pad_size=15
 )
 
-sr_image.save(f"image_up{scale}.png")
+sr_image.save(f"../images/cut_3_2.png_up{scale}.png")
 
 

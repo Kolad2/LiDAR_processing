@@ -5,8 +5,8 @@ from pathlib import Path
 from pygradskeleton import grayscale_skeletonize
 
 
-edges_weighted_path = Path(f"D:/1.ToSaver/profileimages/1/image_edges.png")
-image_edges_thin = Path(f"D:/1.ToSaver/profileimages/1/image_edges_thin.png")
+edges_weighted_path = Path(f"../images/cut_3_2_edges.png")
+image_edges_thin = Path(f"../images/cut_3_2_edges_thin.png")
 image = cv2.imread(str(edges_weighted_path))
 
 thin_image = grayscale_skeletonize(image, h=50).astype(np.uint8)

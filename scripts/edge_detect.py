@@ -27,9 +27,9 @@ def get_model(name):
 model_name = "pidinet_7"
 #image_load_path = f"../images_test/IMGP3859_cut.png"
 
-image_load_path_0 = str(Path("D:\\1.ToSaver\\profileimages\\1\\image.png"))
-image_load_path = image_load_path_0
-image_save_path = str(Path("D:/1.ToSaver/profileimages/1/image_edges.png"))
+image_load_path_0 = str(Path("../images/cut_3_2.png"))
+image_load_path = str(Path("../images/cut_3_2_up4.png"))
+image_save_path = str(Path("../images/cut_3_2_edges.png"))
 
 image_0 = cv2.imread(image_load_path_0)
 size_0 = (image_0.shape[1], image_0.shape[0])
@@ -40,7 +40,7 @@ model = Cropper(get_model(model_name))
 
 
 b, r, g = cv2.split(image)
-clahe = cv2.createCLAHE(clipLimit=10.0, tileGridSize=(25, 25))
+clahe = cv2.createCLAHE(clipLimit=5.0, tileGridSize=(10, 10))
 b = clahe.apply(b).astype(np.uint8)
 r = clahe.apply(r).astype(np.uint8)
 g = clahe.apply(g).astype(np.uint8)
