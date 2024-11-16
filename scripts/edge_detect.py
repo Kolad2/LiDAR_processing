@@ -27,14 +27,16 @@ def get_model(name):
 model_name = "pidinet_7"
 #image_load_path = f"../images_test/IMGP3859_cut.png"
 
-image_load_path_0 = str(Path("../images/cut_3_2.png"))
-image_load_path = str(Path("../images/cut_3_2_up4.png"))
-image_save_path = str(Path("../images/cut_3_2_edges.png"))
+root_path = Path("D:/1.ToSaver/profileimages/photo_database")
 
-image_0 = cv2.imread(image_load_path_0)
+image_load_path_0 = root_path / "images" / "IMGP3286.png"
+image_load_path = image_load_path_0
+image_save_path = root_path / "weighted_edges" / "IMGP3284_weighted.png"
+
+image_0 = cv2.imread(str(image_load_path_0))
 size_0 = (image_0.shape[1], image_0.shape[0])
 
-image = cv2.imread(image_load_path)
+image = cv2.imread(str(image_load_path))
 # get edges from model
 model = Cropper(get_model(model_name))
 
@@ -64,7 +66,7 @@ result = np.maximum.reduce((result_b, result_r, result_g, result))
 image = (result/np.max(result)*255).astype(np.uint8)
 image = cv2.merge((image, image, image))
 image = cv2.resize(image, size_0)
-cv2.imwrite(image_save_path, image)
+cv2.imwrite(str(image_save_path), image)
 #
 fig = plt.figure(figsize=(14, 9))
 axs = [fig.add_subplot(1, 1, 1)]
