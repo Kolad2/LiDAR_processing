@@ -4,18 +4,18 @@ import numpy as np
 from pathlib import Path
 from pygradskeleton import grayscale_skeletonize
 
+root_path = Path("D:/1.ToSaver/profileimages/photo_database")
+edges_weighted_path = root_path / "edges_weighted" / "IMGP3284.png"
+edges_thin_path = root_path / "edges_thin" / edges_weighted_path.name
 
-edges_weighted_path = Path(f"../images/cut_3_2_edges.png")
-image_edges_thin = Path(f"../images/cut_3_2_edges_thin.png")
+
 image = cv2.imread(str(edges_weighted_path))
+image_thin = grayscale_skeletonize(image, h=75).astype(np.uint8)
+_, image_thin = cv2.threshold(image_thin, 80, 255, cv2.THRESH_BINARY)
 
-thin_image = grayscale_skeletonize(image, h=50).astype(np.uint8)
-_, thin_image = cv2.threshold(thin_image, 150, 255, cv2.THRESH_BINARY)
-print(np.unique(thin_image))
-
-cv2.imwrite(str(image_edges_thin), thin_image)
+cv2.imwrite(str(edges_thin_path), image_thin)
 
 fig = plt.figure(figsize=(14, 9))
 axs = [fig.add_subplot(1, 1, 1)]
-axs[0].imshow(thin_image)
+axs[0].imshow(image_thin)
 plt.show()
