@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 root_path = Path("D:/1.ToSaver/profileimages/photo_database")
-edges_thin_path = root_path / "edges_thin" / "IMGP3284.png"
+edges_thin_path = root_path / "edges_thin" / "IMGP3353-3355.png"
 shp_folder = root_path / "edges" / edges_thin_path.stem
 
 image_thin = cv2.imread(str(edges_thin_path), 0)
